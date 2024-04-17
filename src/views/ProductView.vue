@@ -1,4 +1,5 @@
 <template>
+    <h1>Product List Page</h1>
     <BrowseProduct></BrowseProduct>
 </template>
 
