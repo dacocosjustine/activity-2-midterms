@@ -1,5 +1,6 @@
 <template>
-    <ProductList></ProductList>
+     <h1>Add Product Page</h1>
+    <AddProduct></AddProduct>
 </template>
 
 <script>
