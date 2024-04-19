@@ -63,7 +63,7 @@ export default {
   },
 
   methods: {
-    
+
     toggleEdit(product) {
       this.products.forEach(i => {
         if (i.id !== product.id) {
@@ -88,7 +88,7 @@ export default {
           alert('Price Cannot be Empty')
           return
         } else {
-          this.$store.dispatch('editBook', {
+          this.$store.dispatch('editProduct', {
             id: this.id,
             name: this.productName, 
             description: this.productDescription,
