@@ -10,7 +10,7 @@
           <th style="width: 30%;">Action</th>
         </tr>
       </thead>
-      <tbody>
+        <transition-group tag="tbody">
         <tr v-for="product in products" :key="product.id">
           <td>
             <div>{{ product.name }}</div>
@@ -39,7 +39,7 @@
             <button @click="deleteProduct(product)">Delete</button>
           </td>
         </tr>
-      </tbody>
+      </transition-group>
     </table>
   </div>
 </template>
