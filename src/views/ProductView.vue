@@ -1,14 +1,16 @@
 <template>
-    <h1>Product List Page</h1>
-    <BrowseProduct></BrowseProduct>
+    <div>
+        <product-list></product-list>
+    </div>
 </template>
 
 <script>
-import BrowseProduct from '@/components/BrowseProduct.vue';
 
+import ProductList from '@/components/ProductList.vue';
 export default {
+    name: 'productView',
     components: {
-        BrowseProduct
+        ProductList
     }
 }
 </script>
