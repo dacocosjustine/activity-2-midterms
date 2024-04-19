@@ -27,7 +27,7 @@
           <td>
             <div>${{ product.price }}</div>
             <Transition name="bounce">
-              <div v-if="product.editMode"><input type="number" v-model="productPrice" placeholder="Edit Price" class="edit-input" style="text-align: center;" required></div>
+              <div v-if="product.editMode"><input type="number" v-model="productPrice" placeholder="Edit Price" class="edit-input" style="text-align: center;" min="0" required></div>
             </Transition>
           </td>
           <td>
@@ -84,16 +84,25 @@ export default {
           if (!this.productName) {
           alert('Name Cannot be Empty');
           return
-        } else if (!this.productPrice) {
-          alert('Price Cannot be Empty')
+        } else if (!this.productDescription) {
+          alert('Description Cannot be Empty')
           return
         } else {
-          this.$store.dispatch('editProduct', {
-            id: this.id,
-            name: this.productName, 
-            description: this.productDescription,
-            price: this.productPrice 
-          });
+          if (!this.productPrice) {
+            alert('Price Cannot be Empty')
+            return
+          } else {
+            if (this.productPrice < 0) {
+              alert('Price Cannot be negative values')
+            } else {
+              this.$store.dispatch('editProduct', {
+                id: this.id,
+                name: this.productName, 
+                description: this.productDescription,
+                price: this.productPrice 
+              });
+            }
+          }
 
           this.productName = '';
           this.productDescription = '';
