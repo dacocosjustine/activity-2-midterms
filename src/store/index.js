@@ -19,6 +19,15 @@ export default createStore({
             state.productId++;
         },
 
+        edit_data(state, {id, name, description, price}) {
+            const product = state.products.find(product => product.id === id);
+            if (product) {
+            product.name = name;
+            product.description = description;
+            product.price = price;
+            }
+        },
+
         deleteProduct(state, id) {
             state.products.splice(id, 1);
         },
@@ -29,6 +38,10 @@ export default createStore({
     actions: {
         addProduct({ commit }, product) {
           commit('addProduct', product);
+        },
+
+        editProduct({commit}, {id, name, description, price}) {
+            commit('edit_data', {id, name, description, price});
         }
     }
 })
