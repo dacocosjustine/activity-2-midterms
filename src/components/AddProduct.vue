@@ -49,6 +49,7 @@
         this.price = '';
 
         console.log(this.$store.state.products)
+        alert('Product Added Successfully')
       }
     }
   };

@@ -29,7 +29,10 @@ export default createStore({
         },
 
         deleteProduct(state, id) {
-            state.products.splice(id, 1);
+            const index = state.products.findIndex(product => product.id === id);
+            if (index !== -1) {
+                state.products.splice(index, 1);
+            }
         },
         updateProduct(state, product) {
             state.products[product.id] = product;
@@ -42,6 +45,11 @@ export default createStore({
 
         editProduct({commit}, {id, name, description, price}) {
             commit('edit_data', {id, name, description, price});
+        },
+
+        deleteProduct({commit}, id) {
+            commit('deleteProduct', id);
         }
+        
     }
 })

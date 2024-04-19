@@ -36,6 +36,7 @@
               <button @click="saveEdit(product)">Save</button>
               <button @click="cancelEdit(product)">Cancel</button>
             </template>
+            <button @click="deleteProduct(product)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -120,6 +121,10 @@ export default {
       this.productDescription = '';
       this.productPrice = '';
       product.editMode = false;
+    },
+
+    deleteProduct(product) {
+      this.$store.dispatch('deleteProduct', product.id);
     }
   }
 };
