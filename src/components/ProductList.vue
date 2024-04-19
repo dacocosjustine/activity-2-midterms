@@ -64,7 +64,6 @@ export default {
   },
 
   methods: {
-
     toggleEdit(product) {
       this.products.forEach(i => {
         if (i.id !== product.id) {
