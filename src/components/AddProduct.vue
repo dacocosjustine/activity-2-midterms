@@ -63,6 +63,11 @@
   </script>
   
   <style scoped>
+  h2 {
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
+
   .add-product-container {
     max-width: 400px;
     margin: 20px auto;
@@ -108,6 +113,7 @@
     border: none;
     cursor: pointer;
     font-size: 16px;
+    font-weight: bold;
     transition: background-color 0.3s ease-in-out;
   }
   

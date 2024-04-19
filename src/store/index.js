@@ -2,7 +2,14 @@ import { createStore } from 'vuex'
 
 export default createStore({
     state: {
-        products: [],
+        products: 
+        [
+            {id: 1, name: 'Smartphone', description: 'High-end smartphone with advanced features.', price: 12399},
+            {id: 2, name: 'Laptop', description: 'Powerful laptop for work and gaming.', price: 39999},
+            {id: 3, name: 'Wireless Headphones', description: 'Premium wireless headphones with noise-cancellation.', price: 990},
+            {id: 4, name: 'Smartwatch', description: 'Feature-packed smartwatch with fitness tracking.', price: 7099},
+            {id: 5, name: 'Smart TV', description: 'High-definition smart TV with built-in streaming apps.', price: 54990},
+        ],
         productId: 0
     },
 

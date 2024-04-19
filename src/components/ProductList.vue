@@ -171,8 +171,14 @@ export default {
 
 <style scoped>
 .container {
-  margin-inline: 50px;
+  margin: 0 auto;
 }
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
 .product-table {
   width: 100%;
   border-collapse: collapse;
@@ -186,7 +192,7 @@ export default {
 }
 
 .product-table th {
-  background-color: #f2f2f2;
+  background-color: #ededfa;
 }
 
 .edit-input {
