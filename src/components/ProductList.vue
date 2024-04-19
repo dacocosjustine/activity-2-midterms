@@ -25,7 +25,7 @@
             </Transition>
           </td>
           <td>
-            <div>${{ product.price }}</div>
+            <div>₱{{ product.price }}</div>
             <Transition name="bounce">
               <div v-if="product.editMode"><input type="number" v-model="productPrice" placeholder="Edit Price" class="edit-input" style="text-align: center;" min="0" required></div>
             </Transition>
