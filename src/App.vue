@@ -1,8 +1,8 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
+    <router-link to="/">Product List</router-link> |
     <router-link to="/add">Add Product</router-link> |
-    <router-link to="/edit">Edit Product</router-link>
+    <router-link to="/">Product List</router-link>
   </nav>
   <router-view/>
 </template>
