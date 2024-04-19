@@ -24,4 +24,6 @@
       }
     }
   }
+
+  // unused di naman connected sa vuex or something array ng list
   </script>
