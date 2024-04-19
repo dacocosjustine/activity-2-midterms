@@ -77,8 +77,8 @@ export default {
 
     saveEdit(product) {
 
-      if (!this.productName && !this.productPrice) {
-        alert('Edit Cannot be Empty');
+      if (!this.productName && !this.productDescription && !this.productPrice) {
+        alert('Edit Fields Cannot be Empty');
         return
       } else {
           if (!this.productName) {
@@ -96,20 +96,20 @@ export default {
           });
 
           this.productName = '';
-          this.productDescription
+          this.productDescription = '';
           this.productPrice = '';
         }
       }
     
 
-      console.log(this.$store.getters.products)
+      console.log(this.$store.getters.productsList)
       product.editMode = false;
     },
 
     cancelEdit(product) {
       this.productName = '';
       this.productDescription = '';
-      this.productName = '';
+      this.productPrice = '';
       product.editMode = false;
     }
   }
@@ -126,10 +126,73 @@ export default {
 .product-table td {
   border: 1px solid #ccc;
   padding: 8px;
-  text-align: left;
+  text-align: center;
 }
 
 .product-table th {
   background-color: #f2f2f2;
+}
+
+.edit-input {
+  width: 100%;
+  padding-block: 5px;
+  margin-inline: 100px, 300px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:nth-child(1) {
+  background-color: #007bff;
+}
+
+button:nth-child(2) {
+  background-color: red;
+}
+
+button:nth-child(1):hover {
+  background-color: #0056b3;
+}
+
+button:nth-child(2):hover {
+  background-color: #820300;
+}
+
+.bounce-enter-active {
+  animation: bounce-in 0.5s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.5s reverse;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 </style>
