@@ -45,6 +45,8 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2';
+
 export default {
   name: 'productList',
   data() {
@@ -123,7 +125,40 @@ export default {
     },
 
     deleteProduct(product) {
-      this.$store.dispatch('deleteProduct', product.id);
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, delete it!"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.deleteConfirmed(product);
+        }
+      });
+    },
+
+    deleteConfirmed(product) {
+      this.$store.dispatch('deleteProduct', product.id)
+        .then(() => {
+          Swal.fire({
+            position: "top-end",
+            icon: "warning",
+            title: "Product Deleted!",
+            showConfirmButton: false,
+            timer: 1000
+          });
+        })
+        .catch((error) => {
+          console.error("Error deleting product:", error);
+          Swal.fire({
+            title: "Error",
+            text: "An error occurred while deleting the product.",
+            icon: "error"
+          });
+        });
     }
   }
 };
