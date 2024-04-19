@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="container">
     <h2>Product List</h2>
-    <table class="product-table">
+    <table>
       <thead>
         <tr>
           <th style="width: 20%;">Product Name</th>
@@ -171,6 +171,10 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  margin-inline: 50px;
+}
+
 .product-table {
   width: 100%;
   border-collapse: collapse;
