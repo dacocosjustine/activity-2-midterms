@@ -150,7 +150,6 @@ export default {
       this.$store.dispatch('deleteProduct', product.id)
         .then(() => {
           Swal.fire({
-            position: "top-end",
             icon: "warning",
             title: "Product Deleted!",
             showConfirmButton: false,

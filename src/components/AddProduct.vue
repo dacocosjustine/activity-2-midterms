@@ -52,7 +52,6 @@
 
         console.log(this.$store.state.products)
         Swal.fire({
-          position: "top-end",
           icon: "success",
           title: "Product Added!",
           showConfirmButton: false,
