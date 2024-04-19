@@ -46,6 +46,7 @@
 
 <script>
 import Swal from 'sweetalert2';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default {
   name: 'productList',
