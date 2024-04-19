@@ -22,6 +22,8 @@
   </template>
   
   <script>
+  import Swal from 'sweetalert2';
+
   export default {
     name: 'addProduct',
     data() {
@@ -49,7 +51,13 @@
         this.price = '';
 
         console.log(this.$store.state.products)
-        alert('Product Added Successfully')
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Product Added!",
+          showConfirmButton: false,
+          timer: 1000
+        });
       }
     }
   };
