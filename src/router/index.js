@@ -1,9 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import ProductView from '@/views/ProductView.vue'
 import AddView from '@/views/AddView.vue'
-import DeleteView from '@/views/DeleteView.vue'
-
-
 
 const routes = [
   {
@@ -15,11 +12,6 @@ const routes = [
     path: '/add',
     name: 'AddView',
     component: AddView
-  },
-  {
-    path: '/delete',
-    name: 'delete',
-    component: DeleteView
   }
 ]
 
