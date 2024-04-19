@@ -15,26 +15,26 @@
           <td>
             <div>{{ product.name }}</div>
             <Transition name="bounce">
-              <div v-if="product.editMode"><input type="text" v-model="productName" placeholder="edit name" class="edit-input" style="text-align: center;" required></div>
+              <div v-if="product.editMode"><input type="text" v-model="productName" placeholder="Edit Name" class="edit-input" style="text-align: center;" required></div>
             </Transition>
           </td>
           <td>
             <div>{{ product.description }}</div>
             <Transition name="bounce">
-              <div v-if="product.editMode"><input type="number" v-model="productDescription" placeholder="edit price" class="edit-input" style="text-align: center;" required></div>
+              <div v-if="product.editMode"><input type="text" v-model="productDescription" placeholder="Edit Description" class="edit-input" style="text-align: center;" required></div>
             </Transition>
           </td>
           <td>
             <div>${{ product.price }}</div>
             <Transition name="bounce">
-              <div v-if="product.editMode"><input type="number" v-model="productPrice" placeholder="edit price" class="edit-input" style="text-align: center;" required></div>
+              <div v-if="product.editMode"><input type="number" v-model="productPrice" placeholder="Edit Price" class="edit-input" style="text-align: center;" required></div>
             </Transition>
           </td>
           <td>
-            <button v-if="!product.editMode" @click="toggleEdit(book)">Edit</button>
+            <button v-if="!product.editMode" @click="toggleEdit(product)">Edit</button>
             <template v-else>
-              <button @click="saveEdit(book)">Save</button>
-              <button @click="cancelEdit(book)">Cancel</button>
+              <button @click="saveEdit(product)">Save</button>
+              <button @click="cancelEdit(product)">Cancel</button>
             </template>
           </td>
         </tr>
@@ -74,39 +74,42 @@ export default {
       product.editMode = true;
     },
 
-    saveEdit(book) {
+    saveEdit(product) {
 
-      if (!this.bookName && !this.bookPrice) {
+      if (!this.productName && !this.productPrice) {
         alert('Edit Cannot be Empty');
         return
       } else {
-          if (!this.bookName) {
+          if (!this.productName) {
           alert('Name Cannot be Empty');
           return
-        } else if (!this.bookPrice) {
+        } else if (!this.productPrice) {
           alert('Price Cannot be Empty')
           return
         } else {
           this.$store.dispatch('editBook', {
             id: this.id,
-            name: this.bookName, 
-            price: this.bookPrice 
+            name: this.productName, 
+            description: this.productDescription,
+            price: this.productPrice 
           });
 
-          this.bookName = '';
-          this.bookPrice = '';
+          this.productName = '';
+          this.productDescription
+          this.productPrice = '';
         }
       }
     
 
-      console.log(this.$store.getters.bookList)
-      book.editMode = false;
+      console.log(this.$store.getters.products)
+      product.editMode = false;
     },
 
-    cancelEdit(book) {
-      this.bookName = '';
-      this.bookPrice = '';
-      book.editMode = false;
+    cancelEdit(product) {
+      this.productName = '';
+      this.productDescription = '';
+      this.productName = '';
+      product.editMode = false;
     }
   }
 };
