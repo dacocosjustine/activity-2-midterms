@@ -40,6 +40,9 @@
           </td>
         </tr>
       </transition-group>
+        <tr v-if="products.length === 0">
+          <td colspan="4">No Products Added</td>
+        </tr>
     </table>
   </div>
 </template>
