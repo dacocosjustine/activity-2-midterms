@@ -19,7 +19,7 @@ export default createStore({
 
     mutations: {
         addProduct(state, product) {
-            const lastId = Math.max(...state.products.map(product => product.id))
+            const lastId = state.products.length > 0 ? Math.max(...state.products.map(product => product.id)) : 0;
             const newId = lastId + 1;
             state.productId = newId;
 
