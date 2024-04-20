@@ -10,7 +10,7 @@ export default createStore({
             {id: 4, name: 'Smartwatch', description: 'Feature-packed smartwatch with fitness tracking.', price: 7099},
             {id: 5, name: 'Smart TV', description: 'High-definition smart TV with built-in streaming apps.', price: 54990},
         ],
-        productId: 0
+        productId: 0,
     },
 
     getters: {
@@ -19,11 +19,14 @@ export default createStore({
 
     mutations: {
         addProduct(state, product) {
+            const lastId = Math.max(...state.products.map(product => product.id))
+            const newId = lastId + 1;
+            state.productId = newId;
+
             state.products.push({
               id: state.productId,
               ...product
             });
-            state.productId++;
         },
 
         edit_data(state, {id, name, description, price}) {
