@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h2>Product List</h2>
+    <h2>Listahan ng Produkto</h2>
     <table class="product-table">
       <thead>
         <tr>
