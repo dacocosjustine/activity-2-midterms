@@ -119,7 +119,7 @@ export default {
       }
     
 
-      console.log(this.$store.getters.productsList)
+      //console.log(this.$store.getters.productsList)
       product.editMode = false;
     },
 
