@@ -50,8 +50,8 @@
         this.description = '';
         this.price = '';
 
-        console.log(this.$store.state.products)
-        console.log(this.$store.state.productId)
+        //console.log(this.$store.state.products)
+        //console.log(this.$store.state.productId)
         Swal.fire({
           icon: "success",
           title: "Product Added!",
